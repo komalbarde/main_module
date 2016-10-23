@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"colorset":[' +
+'{"att":"Position Break","color_val":"orange" },' +
+'{"att":"Cash","color_val":"green" }]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.colorset[1].att+ " " + obj.colorset[1].color_val;
+
+
+var count = Object.keys(obj).length;
+
+var key;
+for(key in obj.colorset) {
+  if(obj.colorset.hasOwnProperty(key)) {
+    alert(obj.colorset[key].att);
+  }
+}
+</script>
+
+</body>
+</html>
